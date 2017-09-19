@@ -10,7 +10,7 @@ public class OrderTest {
 
 	@Test
 	public void testGetDetails() {
-		Order order = new Order("tea", 1);
+		Order order = new Order("T", 1);
 		assertEquals(order.getDetails(), "T:1:0");
 	}
 
