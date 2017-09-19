@@ -26,4 +26,10 @@ public class OrderTest {
 		assertEquals(order.getDetails(), "C:2:0");
 	}
 
+	@Test
+	public void testForwardMessage() {
+		Order order = new Order("T", 2, "hello");
+		assertEquals(order.getMessage(), "hello");
+	}
+
 }
