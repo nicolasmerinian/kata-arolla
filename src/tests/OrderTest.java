@@ -20,4 +20,10 @@ public class OrderTest {
 		assertEquals(order.getDetails(), "H::");
 	}
 
+	@Test
+	public void testGetDetailsWithMultipleSugars() {
+		Order order = new Order("C", 2);
+		assertEquals(order.getDetails(), "C:2:0");
+	}
+
 }
