@@ -14,4 +14,10 @@ public class OrderTest {
 		assertEquals(order.getDetails(), "T:1:0");
 	}
 
+	@Test
+	public void testGetDetailsWithoutAnySugar() {
+		Order order = new Order("H", 0);
+		assertEquals(order.getDetails(), "H::");
+	}
+
 }

@@ -11,7 +11,14 @@ public class Order {
 	}
 
 	public Object getDetails() {
-		return this.drinkType + ":" + this.sugarNumber + ":0";
+		String details = "";
+		if (this.sugarNumber == 0) {
+			details = this.drinkType + "::";
+		}
+		else {
+			details = this.drinkType + ":" + this.sugarNumber + ":0";
+		}
+		return details;
 	}
 
 }
