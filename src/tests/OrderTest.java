@@ -114,6 +114,18 @@ public class OrderTest {
 		// Then
 		assertEquals(true, empty);
 	}
+
+	@Test
+	public void testEmailNotifying() {
+		// Given
+		Order mockedOrder = Mockito.mock(Order.class);
+		
+		// When
+		mockedOrder.notifyMissingDrink("T");
+
+		// Then
+		Mockito.verify(mockedOrder, Mockito.times(1)).notifyMissingDrink("T");
+	}
 }
 
 

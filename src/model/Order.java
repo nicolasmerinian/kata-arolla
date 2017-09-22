@@ -64,7 +64,6 @@ public class Order implements EmailNotifier, BeverageQuantityChecker {
 
 	@Override
 	public void notifyMissingDrink(String drink) {
-		
 	}
 
 }
