@@ -3,6 +3,7 @@ package model;
 public class Order {
 
 	private String drinkType;
+	private boolean extraHot;
 	private int sugarNumber;
 	private float price;
 	private float amount;
@@ -18,13 +19,22 @@ public class Order {
 		this.amount = amount;
 	}
 
+	public Order(String drinkType, boolean extraHot, int sugarNumber, float price, float amount) {
+		this(drinkType, sugarNumber, price, amount);
+		this.extraHot = extraHot;
+	}
+
 	public Object getDetails() {
-		String details = "";
+		String details = this.drinkType;
+		
+		if (this.extraHot) {
+			details += "h";
+		}
 
 		if (this.sugarNumber == 0) {
-			details = this.drinkType + "::";
+			details += "::";
 		} else {
-			details = this.drinkType + ":" + this.sugarNumber + ":0";
+			details += ":" + this.sugarNumber + ":0";
 		}
 
 		return details;

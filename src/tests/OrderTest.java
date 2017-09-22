@@ -64,4 +64,11 @@ public class OrderTest {
 		assertEquals("", order.getMessage());
 	}
 
+	@Test
+	public void testHotCoffee() {
+		Order order = new Order("C", true, 0, new Float(0.6), new Float(0.6));
+		assertEquals("Ch::", order.getDetails());
+		assertEquals("", order.getMessage());
+	}
+
 }
