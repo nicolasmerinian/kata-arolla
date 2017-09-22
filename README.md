@@ -31,3 +31,12 @@ Tests :
 * "Ch::"		Un café très chaud sans sucre ni touillette
 * "Hh:1:0"	Un chocolat très chaud avec un sucre et une touillette
 * "Th:2:0"	Un thé très chaud avec deux sucres et une touillette
+
+
+**Itération 4**
+Format du rapport :
+Café 				nbCafe
+Chocolat 			nbChocolat
+Jus d'orange 	nbJusOrange
+Thé 					nbThe
+Total					total
