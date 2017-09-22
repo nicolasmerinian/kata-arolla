@@ -171,6 +171,7 @@ public class OrderTest {
 		// Then
 		assertEquals(true, empty);
 		assertEquals("Oops", message);
+//		Mockito.verify(mockedOrder, Mockito.times(1)).notifyMissingDrink("T"); // ça serait bien de vérifier ça vu que qu'on est censé envoyer un mail... 
 		
 		// Finally
 		Mockito.reset(mockedOrder);
