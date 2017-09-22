@@ -51,6 +51,7 @@ Je n'ai pas réussi à faire deux tests :
 * testOrderNoAvailableBeverage
     Je voulais vérifier que la notification était envoyée, ça fait partie de ce qui est demandé fonctionnelement, mais j'ignore comment faire avec Mockito
 
+Je n'ai pas de commit hook mais j'ai fait en sorte que tous mes commits passent les tests.
 (j'ai oublié de créer mes branches ite3 et ite4... oups)
 	
 Merci pour le test, c'était sympa :)
