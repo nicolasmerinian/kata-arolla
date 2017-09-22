@@ -112,6 +112,9 @@ public class OrderTest {
 
 		// Then
 		assertEquals(true, empty);
+		
+		// Finally
+		Mockito.reset(mockedOrder);
 	}
 
 	@Test
@@ -124,7 +127,12 @@ public class OrderTest {
 
 		// Then
 		Mockito.verify(mockedOrder, Mockito.times(1)).notifyMissingDrink("T");
+		
+		// Finally
+		Mockito.reset(mockedOrder);
 	}
+
+
 }
 
 
