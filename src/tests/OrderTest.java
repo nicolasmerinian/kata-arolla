@@ -9,27 +9,52 @@ import model.Order;
 public class OrderTest {
 
 	@Test
-	public void testGetDetails() {
-		Order order = new Order("T", 1);
-		assertEquals(order.getDetails(), "T:1:0");
+	public void testNoMoney() {
+		Order order = new Order("T", 1, new Float(0.4), new Float(0));
+		assertEquals("T:1:0:0.40:0.0", order.getDetails());
+		assertEquals("0.40", order.getMessage());
 	}
 
 	@Test
-	public void testGetDetailsWithoutAnySugar() {
-		Order order = new Order("H", 0);
-		assertEquals(order.getDetails(), "H::");
+	public void testNoChangeToBeGiven() {
+		Order order = new Order("T", 2, new Float(0.4), new Float(0.4));
+		assertEquals("T:2:0:0.40:0.40", order.getDetails());
+		assertEquals("", order.getMessage());
 	}
 
 	@Test
-	public void testGetDetailsWithMultipleSugars() {
-		Order order = new Order("C", 2);
-		assertEquals(order.getDetails(), "C:2:0");
+	public void testTooMuchMoney() {
+		Order order = new Order("C", 3, new Float(0.6), new Float(0.9));
+		assertEquals("C:3:0:0.60:0.90", order.getDetails());
+		assertEquals("", order.getMessage());
 	}
 
 	@Test
-	public void testForwardMessage() {
-		Order order = new Order("T", 2, "hello");
-		assertEquals(order.getMessage(), "hello");
+	public void testReallyTooMuchMoney() {
+		Order order = new Order("H", 1, new Float(0.5), new Float(1.00));
+		assertEquals("H:1:0:0.50:1.00", order.getDetails());
+		assertEquals("", order.getMessage());
+	}
+
+	@Test
+	public void testNotEnoughMoney() {
+		Order order = new Order("H", 2, new Float(0.5), new Float(0.2));
+		assertEquals("H:2:0:0.50:0.20", order.getDetails());
+		assertEquals("0.30", order.getMessage());
+	}
+
+	@Test
+	public void testNoSugarButWithEnoughMoney() {
+		Order order = new Order("C", 0, new Float(0.6), new Float(0.7));
+		assertEquals("C:::0.60:0.70", order.getDetails());
+		assertEquals("", order.getMessage());
+	}
+
+	@Test
+	public void testWithNeitherSugarOrEnoughMoney() {
+		Order order = new Order("C", 0, new Float(0.6), new Float(0.1));
+		assertEquals("C:::0.60:0.10", order.getDetails());
+		assertEquals("0.50", order.getMessage());
 	}
 
 }
