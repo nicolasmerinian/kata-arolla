@@ -13,7 +13,7 @@ public class DatabaseTest {
 	private Database db = Database.getInstance();
 
 	@Before
-	public void initEach(){
+	public void initEach() {
 	    db.getOrders().clear();
 	}
 
@@ -26,7 +26,7 @@ public class DatabaseTest {
 
 	@Test
 	public void testAddOrder() {
-		db.addOrder(new Order(null, 0));
+		db.addOrder(new Order("T", true, 2, new Float(0.4), new Float(0.4)));
 		assertEquals(db.getOrders().size(), 1);
 	}
 
