@@ -24,6 +24,14 @@ public class Order {
 		this.extraHot = extraHot;
 	}
 
+	public String getDrinkType() {
+		return this.drinkType;
+	}
+
+	public float getPrice() {
+		return this.price;
+	}
+
 	public Object getDetails() {
 		String details = this.drinkType;
 		

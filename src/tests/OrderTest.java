@@ -9,6 +9,18 @@ import model.Order;
 public class OrderTest {
 
 	@Test
+	public void testGetDrinkType() {
+		Order order = new Order("T", 1, new Float(0.4), new Float(0));
+		assertEquals("T", order.getDrinkType());
+	}
+
+	@Test
+	public void testGetPrice() {
+		Order order = new Order("T", 1, new Float(0.4), new Float(0));
+		assertEquals(0.4, order.getPrice(), 0.01);
+	}
+
+	@Test
 	public void testNoMoney() {
 		Order order = new Order("T", 1, new Float(0.4), new Float(0));
 		assertEquals("T:1:0", order.getDetails());
@@ -84,5 +96,4 @@ public class OrderTest {
 		assertEquals("Th:2:0", order.getDetails());
 		assertEquals("", order.getMessage());
 	}
-
 }
