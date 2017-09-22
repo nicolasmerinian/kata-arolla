@@ -40,3 +40,19 @@ Chocolat 			nbChocolat
 Jus d'orange 	nbJusOrange
 Thé 					nbThe
 Total					total
+
+
+**Itération 5**
+Le rebuild de l'index de maven... o.O c'était assez long.
+Utilisation de Mockito pour les tests.
+Je n'ai pas réussi à faire deux tests :
+* testGetMessageWithUnavailableBeverage:
+    Je voulais tester unitairement la méthode mais le getMessage() ne sait pas à quel type de boisson il a affaire... donc ça ne marche pas.
+* testOrderNoAvailableBeverage
+    Je voulais vérifier que la notification était envoyée, ça fait partie de ce qui est demandé fonctionnelement, mais j'ignore comment faire avec Mockito
+
+
+	
+Merci pour le test, c'était sympa :)
+
+
