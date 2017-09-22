@@ -132,6 +132,25 @@ public class OrderTest {
 		Mockito.reset(mockedOrder);
 	}
 
+	@Test
+	public void testOrderNoAvailableBeverage() {
+		// Given
+		Order mockedOrder = Mockito.mock(Order.class);
+		Mockito.when(mockedOrder.isEmpty("T")).thenReturn(true);
+		Mockito.when(mockedOrder.getMessage()).thenReturn("Oops");
+		
+		// When
+		boolean empty = mockedOrder.isEmpty("T");
+		String message = mockedOrder.getMessage();
+
+		// Then
+		assertEquals(true, empty);
+		assertEquals("Oops", message);
+		
+		// Finally
+		Mockito.reset(mockedOrder);
+	}
+
 
 }
 

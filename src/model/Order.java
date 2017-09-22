@@ -49,6 +49,9 @@ public class Order implements EmailNotifier, BeverageQuantityChecker {
 	}
 
 	public String getMessage() {
+		if (this.isEmpty(this.drinkType)) {
+			return "The ordered beverage is not available. A notification has been sent.";
+		}
 		float delta = this.amount - this.price;
 		return delta < 0 ? this.formatPrice(Math.abs(delta)) : "";
 	}
