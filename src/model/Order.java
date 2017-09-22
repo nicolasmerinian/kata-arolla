@@ -1,6 +1,6 @@
 package model;
 
-public class Order {
+public class Order implements EmailNotifier, BeverageQuantityChecker {
 
 	private String drinkType;
 	private boolean extraHot;
@@ -55,6 +55,16 @@ public class Order {
 	
 	private String formatPrice(Float price) {
 		return price + "0";
+	}
+
+	@Override
+	public boolean isEmpty(String drink) {
+		return false;
+	}
+
+	@Override
+	public void notifyMissingDrink(String drink) {
+		
 	}
 
 }
