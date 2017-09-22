@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /** 
  * Pris sur développez.com
  * Pas de prise en compte du multithreading
@@ -7,15 +9,28 @@ package model;
 
 public class Database {
 
-   public static Database getInstance() {
-       if (null == instance) {
-           instance = new Database();
-       }
-       return instance;
-   }
+	private ArrayList<Order> orders;
 
-   private Database() {
-   }
+	public static Database getInstance() {
+		if (null == instance) {
+			instance = new Database();
+		}
+		return instance;
+	}
 
-   private static Database instance;
+	private Database() {
+		this.orders = new ArrayList<Order>();
+	}
+
+	private static Database instance;
+	
+	
+	public ArrayList<Order> getOrders() {
+		return orders;
+	}
+
+	public void addOrder(Order o) {
+		this.orders.add(o);
+	}
+
 }
