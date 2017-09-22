@@ -2,8 +2,12 @@ package tests;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import java.util.LinkedList;
 
+import org.junit.Test;
+import org.mockito.Mockito;
+
+import model.BeverageQuantityChecker;
 import model.Order;
 
 public class OrderTest {
@@ -96,4 +100,36 @@ public class OrderTest {
 		assertEquals("Th:2:0", order.getDetails());
 		assertEquals("", order.getMessage());
 	}
+
+	@Test
+	public void testNoBeverage() {
+		// Given
+		Order order = new Order("T", true, 2, new Float(0.4), new Float(0.4));
+		Order mockedOrder = Mockito.mock(Order.class);
+		Mockito.when(mockedOrder.isEmpty("T")).thenReturn(true);
+		
+		// When
+		boolean empty = mockedOrder.isEmpty("T");
+
+		// Then
+		assertEquals(true, empty);
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
