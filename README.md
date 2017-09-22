@@ -22,3 +22,12 @@ Tests :
 * "H:2:0:"		Un chocolat, avec deux sucres, une touillette, pour un montant - insuffisant - de 0.20€ (il manque donc 0.30€)
 * "C:::"			Un café, sans sucre, donc sans touillette, pour un montant - légèrement trop élevé - de 0.70€ (0.10€ en trop)
 * "C:::"			Un café, sans sucre, donc sans touillette, pour un montant - insuffisant - de 0.10€ (il manque donc 0.50€)
+
+
+**Itération 3**
+Format :    typeEtOptionTresChaud:nbSucres:0
+Tests :
+* "O::"			Un jus d'orange, pas de sucre, pas de touillette
+* "Ch::"		Un café très chaud sans sucre ni touillette
+* "Hh:1:0"	Un chocolat très chaud avec un sucre et une touillette
+* "Th:2:0"	Un thé très chaud avec deux sucres et une touillette
