@@ -2,15 +2,40 @@ package tests;
 
 import static org.junit.Assert.*;
 
-import java.util.LinkedList;
-
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import model.BeverageQuantityChecker;
 import model.Order;
 
 public class OrderTest {
+
+	@Test
+	public void testGetMessageEmpty() {
+		Order order = new Order("T", 1, new Float(0.4), new Float(0.4));
+		assertEquals("", order.getMessage());
+	}
+
+	@Test
+	public void testGetMessageWithMissingMoney() {
+		Order order = new Order("T", 1, new Float(0.4), new Float(0.1));
+		assertEquals("0.30", order.getMessage());
+	}
+
+//	@Test
+//	public void testGetMessageWithUnavailableBeverage() {
+//		// Given
+//		Order mockedOrder = Mockito.mock(Order.class); // on ne sait pas que c'est un thé...
+//		Mockito.when(mockedOrder.isEmpty("T")).thenReturn(true);
+//
+//		// When
+//		String message = mockedOrder.getMessage();
+//
+//		// Then
+//		assertEquals("The ordered beverage is not available. A notification has been sent.", message);
+//
+//		// Finally
+//		Mockito.reset(mockedOrder);
+//	}
 
 	@Test
 	public void testGetDrinkType() {
