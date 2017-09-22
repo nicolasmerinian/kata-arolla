@@ -29,19 +29,23 @@ public class Order implements EmailNotifier, BeverageQuantityChecker {
 	}
 
 	public Object getDetails() {
-		String details = this.drinkType;
+		StringBuilder details = new StringBuilder();
+		details.append(this.drinkType);
 		
 		if (this.extraHot) {
-			details += "h";
+			details.append("h");
 		}
+
+		details.append(":");
 
 		if (this.sugarNumber == 0) {
-			details += "::";
+			details.append(":");
 		} else {
-			details += ":" + this.sugarNumber + ":0";
+			details.append(this.sugarNumber);
+			details.append(":0");
 		}
 
-		return details;
+		return details.toString();
 	}
 
 	public String getMessage() {
