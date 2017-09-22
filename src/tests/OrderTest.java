@@ -104,7 +104,6 @@ public class OrderTest {
 	@Test
 	public void testNoBeverage() {
 		// Given
-		Order order = new Order("T", true, 2, new Float(0.4), new Float(0.4));
 		Order mockedOrder = Mockito.mock(Order.class);
 		Mockito.when(mockedOrder.isEmpty("T")).thenReturn(true);
 		
