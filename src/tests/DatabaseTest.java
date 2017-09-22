@@ -32,7 +32,20 @@ public class DatabaseTest {
 
 	@Test
 	public void testGetReportWithoutAnyOrder() {
-		assertEquals("Café 0\nChocolat 0\nJus d'orange 0\nThé 0\nTotal 0€", db.getReport());
+		assertEquals("Café 0\nChocolat 0\nJus d'orange 0\nThé 0\nTotal 0.0€", db.getReport());
+	}
+
+	@Test
+	public void testGetReportWithOrders() {
+		db.addOrder(new Order("T", true, 2, new Float(0.4), new Float(0.4)));
+		db.addOrder(new Order("H", true, 1, new Float(0.5), new Float(0.5)));
+		db.addOrder(new Order("O", 0, new Float(0.6), new Float(0.6)));
+		db.addOrder(new Order("C", 0, new Float(0.6), new Float(0.6)));
+		db.addOrder(new Order("H", 2, new Float(0.5), new Float(0.5)));
+		db.addOrder(new Order("T", 2, new Float(0.4), new Float(0.4)));
+		db.addOrder(new Order("C", true, 0, new Float(0.6), new Float(0.6)));
+		db.addOrder(new Order("T", 1, new Float(0.5), new Float(0.5)));
+		assertEquals("Café 2\nChocolat 2\nJus d'orange 1\nThé 3\nTotal 4.1€", Database.getInstance().getReport());
 	}
 
 }

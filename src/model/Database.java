@@ -39,7 +39,7 @@ public class Database {
 		int chocolates = 0;
 		int coffees = 0;
 		int orangeJuices = 0;
-		int total = 0;
+		float total = 0;
 
 		for (Order o : this.orders) {
 			String type = o.getDrinkType();
