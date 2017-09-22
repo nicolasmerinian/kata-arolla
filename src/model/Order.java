@@ -27,17 +27,6 @@ public class Order {
 			details = this.drinkType + ":" + this.sugarNumber + ":0";
 		}
 
-		if (this.amount == 0) {
-			details += ":" + this.formatPrice(this.price)
-					+ ":" + this.amount;
-		} else if (this.amount >= this.price) {
-			details += ":" + this.formatPrice(this.price)
-					+ ":" + this.formatPrice(this.amount);
-		} else {
-			details += ":" + this.formatPrice(this.price)
-					+ ":" + this.formatPrice(this.amount);
-		}
-
 		return details;
 	}
 
