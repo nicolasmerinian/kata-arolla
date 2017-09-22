@@ -57,4 +57,11 @@ public class OrderTest {
 		assertEquals("0.50", order.getMessage());
 	}
 
+	@Test
+	public void testOrangeJuice() {
+		Order order = new Order("O", 0, new Float(0.6), new Float(0.6));
+		assertEquals("O::", order.getDetails());
+		assertEquals("", order.getMessage());
+	}
+
 }
