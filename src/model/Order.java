@@ -8,13 +8,9 @@ public class Order implements EmailNotifier, BeverageQuantityChecker {
 	private float price;
 	private float amount;
 
-	public Order(String drinkType, int sugarNumber) {
+	public Order(String drinkType, int sugarNumber, float price, float amount) {
 		this.drinkType = drinkType;
 		this.sugarNumber = sugarNumber;
-	}
-
-	public Order(String drinkType, int sugarNumber, float price, float amount) {
-		this(drinkType, sugarNumber);
 		this.price = price;
 		this.amount = amount;
 	}
