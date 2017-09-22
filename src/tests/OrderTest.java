@@ -71,4 +71,18 @@ public class OrderTest {
 		assertEquals("", order.getMessage());
 	}
 
+	@Test
+	public void testHotChocolate() {
+		Order order = new Order("H", true, 1, new Float(0.5), new Float(0.5));
+		assertEquals("Hh:1:0", order.getDetails());
+		assertEquals("", order.getMessage());
+	}
+
+	@Test
+	public void testHotTea() {
+		Order order = new Order("T", true, 2, new Float(0.4), new Float(0.4));
+		assertEquals("Th:2:0", order.getDetails());
+		assertEquals("", order.getMessage());
+	}
+
 }
